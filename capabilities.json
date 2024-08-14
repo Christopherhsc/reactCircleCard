@@ -1,0 +1,53 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Measure Data",
+      "name": "measure",
+      "kind": "Measure"
+    }
+  ],
+  "objects": {
+    "components": {
+      "properties": {
+        "circleColor": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "circleThickness": {
+          "type": {
+            "numeric": true
+          }
+        },
+        "labelText": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "measure": {
+            "max": 1
+          }
+        }
+      ],
+      "single": {
+        "role": "measure"
+      }
+    }
+  ],
+  "privileges": []
+}
