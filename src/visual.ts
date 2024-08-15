@@ -10,12 +10,12 @@ import * as ReactDOM from "react-dom";
 import {
   CircleComponent,
   initialState as initialCircleState,
-} from "./circleComponent";
+} from "./components/circleComponent";
 import IViewport = powerbi.IViewport;
 import { FormattingSettingsService } from "powerbi-visuals-utils-formattingmodel";
 import { VisualFormattingSettingsModel } from "./settings";
-import { BarChartComponent, initialBarChartState } from "./barChartComponent";
-import { TitleComponent, initialTitleState } from "./titleComponent";
+import { BarChartComponent, initialBarChartState } from "./components/barChartComponent";
+import { TitleComponent, initialTitleState } from "./components/titleComponent";
 
 import "./../style/visual.less";
 

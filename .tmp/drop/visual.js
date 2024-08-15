@@ -24908,7 +24908,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 6016:
+/***/ 5383:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -24971,7 +24971,7 @@ BarChartComponent.updateCallback = null;
 
 /***/ }),
 
-/***/ 7883:
+/***/ 7812:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -25014,9 +25014,11 @@ class CircleComponent extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             height: size,
             background,
             borderWidth,
+            borderColor: textColor,
         };
         const textStyle = {
             color: textColor,
+            borderColor: textColor,
         };
         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "circleCard", style: style },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: textStyle },
@@ -25026,6 +25028,57 @@ class CircleComponent extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     }
 }
 CircleComponent.updateCallback = null;
+
+
+/***/ }),
+
+/***/ 5738:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   W: () => (/* binding */ TitleComponent),
+/* harmony export */   y: () => (/* binding */ initialTitleState)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6540);
+
+const initialTitleState = {
+    title: "Sales",
+    fontSize: 20,
+    textColor: "#000000",
+};
+class TitleComponent extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+    constructor(props) {
+        super(props);
+        this.state = initialTitleState;
+        this.state = initialTitleState;
+    }
+    static update(newState) {
+        if (typeof TitleComponent.updateCallback === "function") {
+            TitleComponent.updateCallback(newState);
+        }
+    }
+    componentWillMount() {
+        TitleComponent.updateCallback = (newState) => {
+            this.setState(newState);
+        };
+    }
+    componentWillUnmount() {
+        TitleComponent.updateCallback = null;
+    }
+    render() {
+        const { title, fontSize, textColor } = this.state;
+        const style = {
+            color: textColor,
+            fontSize: `${fontSize}px`,
+            position: "absolute",
+            top: "10px",
+            left: "10px",
+        };
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "titleComponent", style: style }, title));
+    }
+}
+TitleComponent.updateCallback = null;
 
 
 /***/ }),
@@ -25121,57 +25174,6 @@ class VisualFormattingSettingsModel extends FormattingSettingsModel {
 
 /***/ }),
 
-/***/ 387:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   W: () => (/* binding */ TitleComponent),
-/* harmony export */   y: () => (/* binding */ initialTitleState)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6540);
-
-const initialTitleState = {
-    title: "Sales",
-    fontSize: 20,
-    textColor: "#000000",
-};
-class TitleComponent extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-    constructor(props) {
-        super(props);
-        this.state = initialTitleState;
-        this.state = initialTitleState;
-    }
-    static update(newState) {
-        if (typeof TitleComponent.updateCallback === "function") {
-            TitleComponent.updateCallback(newState);
-        }
-    }
-    componentWillMount() {
-        TitleComponent.updateCallback = (newState) => {
-            this.setState(newState);
-        };
-    }
-    componentWillUnmount() {
-        TitleComponent.updateCallback = null;
-    }
-    render() {
-        const { title, fontSize, textColor } = this.state;
-        const style = {
-            color: textColor,
-            fontSize: `${fontSize}px`,
-            position: "absolute",
-            top: "10px",
-            left: "10px",
-        };
-        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "titleComponent", style: style }, title));
-    }
-}
-TitleComponent.updateCallback = null;
-
-
-/***/ }),
-
 /***/ 9540:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -25181,11 +25183,11 @@ TitleComponent.updateCallback = null;
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6540);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(961);
-/* harmony import */ var _circleComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7883);
+/* harmony import */ var _components_circleComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7812);
 /* harmony import */ var powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7674);
 /* harmony import */ var _settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1917);
-/* harmony import */ var _barChartComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6016);
-/* harmony import */ var _titleComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(387);
+/* harmony import */ var _components_barChartComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5383);
+/* harmony import */ var _components_titleComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(5738);
 
 
 
@@ -25209,9 +25211,9 @@ class Visual {
         container.appendChild(this.circleContainer);
         container.appendChild(this.barChartContainer);
         container.appendChild(this.titleContainer);
-        this.circleRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C, {});
-        this.barChartRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X, {});
-        this.titleRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W, {});
+        this.circleRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C, {});
+        this.barChartRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X, {});
+        this.titleRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W, {});
         react_dom__WEBPACK_IMPORTED_MODULE_1__.render(this.circleRoot, this.circleContainer);
         react_dom__WEBPACK_IMPORTED_MODULE_1__.render(this.barChartRoot, this.barChartContainer);
         react_dom__WEBPACK_IMPORTED_MODULE_1__.render(this.titleRoot, this.titleContainer);
@@ -25229,7 +25231,7 @@ class Visual {
             const titleSettings = this.formattingSettings.titleCard;
             const value = dataView.single.value;
             const numericValue = typeof value === "number" ? value : parseFloat(value);
-            _circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C.update({
+            _components_circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C.update({
                 textLabel: dataView.metadata.columns[0].displayName,
                 textValue: numericValue.toString(),
                 size,
@@ -25237,7 +25239,7 @@ class Visual {
                 background: circleSettings.circleColor.value.value,
                 textColor: circleSettings.labelText.value.value,
             });
-            _barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X.update({
+            _components_barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X.update({
                 data: [
                     {
                         name: dataView.metadata.columns[0].displayName,
@@ -25247,7 +25249,7 @@ class Visual {
                 backgroundColor: circleSettings.circleColor.value.value,
                 textColor: circleSettings.labelText.value.value,
             });
-            _titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W.update({
+            _components_titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W.update({
                 title: titleSettings.titleText.value,
                 fontSize: titleSettings.fontSize.value,
                 textColor: titleSettings.textColor.value.value,
@@ -25258,9 +25260,9 @@ class Visual {
         }
     }
     clear() {
-        _circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C.update(_circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .initialState */ .u);
-        _barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X.update(_barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .initialBarChartState */ .F);
-        _titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W.update(_titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .initialTitleState */ .y);
+        _components_circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C.update(_components_circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .initialState */ .u);
+        _components_barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X.update(_components_barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .initialBarChartState */ .F);
+        _components_titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W.update(_components_titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .initialTitleState */ .y);
     }
     getFormattingModel() {
         return this.formattingSettingsService.buildFormattingModel(this.formattingSettings);

@@ -52,10 +52,12 @@ export class CircleComponent extends React.Component<object, State> {
       height: size,
       background,
       borderWidth,
+      borderColor: textColor,
     };
 
     const textStyle: React.CSSProperties = {
       color: textColor,
+      borderColor: textColor,
     };
 
     return (
