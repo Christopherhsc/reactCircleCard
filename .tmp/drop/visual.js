@@ -2,368 +2,6 @@ var reactCircleCardD1A9BA96F7924AC5BF4CCD3975E2EB44_DEBUG;
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 4452:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   F: () => (/* binding */ initialBarChartState),
-/* harmony export */   X: () => (/* binding */ BarChartComponent)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6540);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4653);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8224);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9107);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7984);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3495);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4763);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(5344);
-
-
-const initialBarChartState = {
-    data: [],
-    backgroundColor: "#ffffff",
-    textColor: "#FFFFFF",
-};
-class BarChartComponent extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-    constructor(props) {
-        super(props);
-        this.state = initialBarChartState;
-        this.state = initialBarChartState;
-    }
-    static update(newState) {
-        if (typeof BarChartComponent.updateCallback === "function") {
-            BarChartComponent.updateCallback(newState);
-        }
-    }
-    componentWillMount() {
-        BarChartComponent.updateCallback = (newState) => {
-            this.setState(newState);
-        };
-    }
-    componentWillUnmount() {
-        BarChartComponent.updateCallback = null;
-    }
-    render() {
-        const { data, backgroundColor, textColor } = this.state;
-        const style = {
-            backgroundColor,
-            padding: "10px",
-        };
-        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "barChart", style: style },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_1__/* .ResponsiveContainer */ .u, { width: "100%", height: 300 },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_2__/* .BarChart */ .E, { data: data },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_3__/* .CartesianGrid */ .d, { strokeDasharray: "3 3" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_4__/* .XAxis */ .W, { dataKey: "name", stroke: textColor }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_5__/* .YAxis */ .h, { width: 80, stroke: textColor }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__/* .Tooltip */ .m, { labelStyle: { color: textColor } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__/* .Bar */ .y, { dataKey: "value", fill: textColor })))));
-    }
-}
-BarChartComponent.updateCallback = null;
-
-
-/***/ }),
-
-/***/ 487:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   C: () => (/* binding */ CircleComponent),
-/* harmony export */   u: () => (/* binding */ initialState)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6540);
-// circleComponent.tsx
-
-const initialState = {
-    textLabel: "",
-    textValue: "",
-    size: 200,
-    textColor: "#FFF",
-};
-class CircleComponent extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-    constructor(props) {
-        super(props);
-        this.state = initialState;
-        this.state = initialState;
-    }
-    static update(newState) {
-        if (typeof CircleComponent.updateCallback === "function") {
-            CircleComponent.updateCallback(newState);
-        }
-    }
-    componentWillMount() {
-        CircleComponent.updateCallback = (newState) => {
-            this.setState(newState);
-        };
-    }
-    componentWillUnmount() {
-        CircleComponent.updateCallback = null;
-    }
-    render() {
-        const { textLabel, textValue, size, background, borderWidth, textColor } = this.state;
-        const style = {
-            width: size,
-            height: size,
-            background,
-            borderWidth,
-        };
-        const textStyle = {
-            color: textColor,
-        };
-        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "circleCard", style: style },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: textStyle },
-                textLabel,
-                ":",
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("em", null, textValue))));
-    }
-}
-CircleComponent.updateCallback = null;
-
-
-/***/ }),
-
-/***/ 9305:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   S: () => (/* binding */ VisualFormattingSettingsModel)
-/* harmony export */ });
-/* harmony import */ var powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7674);
-// settings.ts
-
-
-var FormattingSettingsCard = powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.SimpleCard */ .z.Tn;
-var FormattingSettingsModel = powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.Model */ .z.Kx;
-class CircleCardSettings extends FormattingSettingsCard {
-    constructor() {
-        super(...arguments);
-        this.circleColor = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.ColorPicker */ .z.sk({
-            name: "circleColor",
-            displayName: "Color",
-            description: "The fill color of the circle.",
-            visible: true,
-            value: { value: "white" },
-        });
-        this.circleThickness = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.NumUpDown */ .z.iB({
-            name: "circleThickness",
-            displayName: "Thickness",
-            description: "The circle thickness.",
-            visible: true,
-            value: 2,
-        });
-        this.labelText = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.ColorPicker */ .z.sk({
-            name: "labelText",
-            displayName: "Text Color",
-            value: { value: "smokewhite" },
-            visible: true,
-        });
-        this.name = "components";
-        this.displayName = "Components";
-        this.visible = true;
-        this.slices = [
-            this.circleColor,
-            this.circleThickness,
-            this.labelText,
-        ];
-    }
-}
-class TitleCardSettings extends FormattingSettingsCard {
-    constructor() {
-        super(...arguments);
-        this.titleText = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.TextInput */ .z.ks({
-            name: "titleText",
-            displayName: "Title Text",
-            value: "Sales",
-            visible: true,
-            placeholder: "Enter title here",
-        });
-        this.fontSize = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.NumUpDown */ .z.iB({
-            name: "fontSize",
-            displayName: "Font Size",
-            description: "The font size of the title.",
-            visible: true,
-            value: 20,
-        });
-        this.textColor = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.ColorPicker */ .z.sk({
-            name: "textColor",
-            displayName: "Text Color",
-            value: { value: "#000000" },
-            visible: true,
-        });
-        this.name = "titleSettings";
-        this.displayName = "Title Settings";
-        this.visible = true;
-        this.slices = [
-            this.titleText,
-            this.fontSize,
-            this.textColor,
-        ];
-    }
-}
-class VisualFormattingSettingsModel extends FormattingSettingsModel {
-    constructor() {
-        super(...arguments);
-        this.circleCard = new CircleCardSettings();
-        this.titleCard = new TitleCardSettings();
-        this.cards = [this.circleCard, this.titleCard];
-    }
-}
-
-
-/***/ }),
-
-/***/ 2343:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   W: () => (/* binding */ TitleComponent),
-/* harmony export */   y: () => (/* binding */ initialTitleState)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6540);
-
-const initialTitleState = {
-    title: "Sales",
-    fontSize: 20,
-    textColor: "#000000",
-};
-class TitleComponent extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-    constructor(props) {
-        super(props);
-        this.state = initialTitleState;
-        this.state = initialTitleState;
-    }
-    static update(newState) {
-        if (typeof TitleComponent.updateCallback === "function") {
-            TitleComponent.updateCallback(newState);
-        }
-    }
-    componentWillMount() {
-        TitleComponent.updateCallback = (newState) => {
-            this.setState(newState);
-        };
-    }
-    componentWillUnmount() {
-        TitleComponent.updateCallback = null;
-    }
-    render() {
-        const { title, fontSize, textColor } = this.state;
-        const style = {
-            color: textColor,
-            fontSize: `${fontSize}px`,
-            position: "absolute",
-            top: "10px",
-            left: "10px",
-        };
-        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "titleComponent", style: style }, title));
-    }
-}
-TitleComponent.updateCallback = null;
-
-
-/***/ }),
-
-/***/ 2336:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   b: () => (/* binding */ Visual)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6540);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(961);
-/* harmony import */ var _circleComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(487);
-/* harmony import */ var powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7674);
-/* harmony import */ var _settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9305);
-/* harmony import */ var _barChartComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4452);
-/* harmony import */ var _titleComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2343);
-
-
-
-
-
-
-
-
-
-class Visual {
-    constructor(options) {
-        const container = document.createElement("div");
-        container.className = "visual-container";
-        options.element.appendChild(container);
-        this.titleContainer = document.createElement("div");
-        this.titleContainer.className = "titleContainer";
-        this.circleContainer = document.createElement("div");
-        this.circleContainer.className = "circleCard";
-        this.barChartContainer = document.createElement("div");
-        this.barChartContainer.className = "barChartContainer";
-        container.appendChild(this.circleContainer);
-        container.appendChild(this.barChartContainer);
-        container.appendChild(this.titleContainer);
-        this.circleRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C, {});
-        this.barChartRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X, {});
-        this.titleRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W, {});
-        react_dom__WEBPACK_IMPORTED_MODULE_1__.render(this.circleRoot, this.circleContainer);
-        react_dom__WEBPACK_IMPORTED_MODULE_1__.render(this.barChartRoot, this.barChartContainer);
-        react_dom__WEBPACK_IMPORTED_MODULE_1__.render(this.titleRoot, this.titleContainer);
-        this.formattingSettingsService = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_3__/* .FormattingSettingsService */ .O();
-    }
-    update(options) {
-        this.viewport = options.viewport;
-        const { width, height } = this.viewport;
-        const size = Math.min(width, height);
-        if (options.dataViews && options.dataViews[0]) {
-            const dataView = options.dataViews[0];
-            this.formattingSettings =
-                this.formattingSettingsService.populateFormattingSettingsModel(_settings__WEBPACK_IMPORTED_MODULE_4__/* .VisualFormattingSettingsModel */ .S, options.dataViews[0]);
-            const circleSettings = this.formattingSettings.circleCard;
-            const titleSettings = this.formattingSettings.titleCard;
-            const value = dataView.single.value;
-            const numericValue = typeof value === "number" ? value : parseFloat(value);
-            _circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C.update({
-                textLabel: dataView.metadata.columns[0].displayName,
-                textValue: numericValue.toString(),
-                size,
-                borderWidth: circleSettings.circleThickness.value,
-                background: circleSettings.circleColor.value.value,
-                textColor: circleSettings.labelText.value.value,
-            });
-            _barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X.update({
-                data: [
-                    {
-                        name: dataView.metadata.columns[0].displayName,
-                        value: numericValue,
-                    },
-                ],
-                backgroundColor: circleSettings.circleColor.value.value,
-                textColor: circleSettings.labelText.value.value,
-            });
-            _titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W.update({
-                title: titleSettings.titleText.value,
-                fontSize: titleSettings.fontSize.value,
-                textColor: titleSettings.textColor.value.value,
-            });
-        }
-        else {
-            this.clear();
-        }
-    }
-    clear() {
-        _circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C.update(_circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .initialState */ .u);
-        _barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X.update(_barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .initialBarChartState */ .F);
-        _titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W.update(_titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .initialTitleState */ .y);
-    }
-    getFormattingModel() {
-        return this.formattingSettingsService.buildFormattingModel(this.formattingSettings);
-    }
-}
-
-
-/***/ }),
-
 /***/ 8351:
 /***/ (function(module) {
 
@@ -25270,6 +24908,368 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 6016:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   F: () => (/* binding */ initialBarChartState),
+/* harmony export */   X: () => (/* binding */ BarChartComponent)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6540);
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4653);
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8224);
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9107);
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7984);
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3495);
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4763);
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(5344);
+
+
+const initialBarChartState = {
+    data: [],
+    backgroundColor: "#ffffff",
+    textColor: "#FFFFFF",
+};
+class BarChartComponent extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+    constructor(props) {
+        super(props);
+        this.state = initialBarChartState;
+        this.state = initialBarChartState;
+    }
+    static update(newState) {
+        if (typeof BarChartComponent.updateCallback === "function") {
+            BarChartComponent.updateCallback(newState);
+        }
+    }
+    componentWillMount() {
+        BarChartComponent.updateCallback = (newState) => {
+            this.setState(newState);
+        };
+    }
+    componentWillUnmount() {
+        BarChartComponent.updateCallback = null;
+    }
+    render() {
+        const { data, backgroundColor, textColor } = this.state;
+        const style = {
+            backgroundColor,
+            padding: "10px",
+        };
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "barChart", style: style },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_1__/* .ResponsiveContainer */ .u, { width: "100%", height: 300 },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_2__/* .BarChart */ .E, { data: data },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_3__/* .CartesianGrid */ .d, { strokeDasharray: "3 3" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_4__/* .XAxis */ .W, { dataKey: "name", stroke: textColor }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_5__/* .YAxis */ .h, { width: 80, stroke: textColor }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__/* .Tooltip */ .m, { labelStyle: { color: textColor } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__/* .Bar */ .y, { dataKey: "value", fill: textColor })))));
+    }
+}
+BarChartComponent.updateCallback = null;
+
+
+/***/ }),
+
+/***/ 7883:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   C: () => (/* binding */ CircleComponent),
+/* harmony export */   u: () => (/* binding */ initialState)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6540);
+// circleComponent.tsx
+
+const initialState = {
+    textLabel: "",
+    textValue: "",
+    size: 200,
+    textColor: "#FFF",
+};
+class CircleComponent extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+    constructor(props) {
+        super(props);
+        this.state = initialState;
+        this.state = initialState;
+    }
+    static update(newState) {
+        if (typeof CircleComponent.updateCallback === "function") {
+            CircleComponent.updateCallback(newState);
+        }
+    }
+    componentWillMount() {
+        CircleComponent.updateCallback = (newState) => {
+            this.setState(newState);
+        };
+    }
+    componentWillUnmount() {
+        CircleComponent.updateCallback = null;
+    }
+    render() {
+        const { textLabel, textValue, size, background, borderWidth, textColor } = this.state;
+        const style = {
+            width: size,
+            height: size,
+            background,
+            borderWidth,
+        };
+        const textStyle = {
+            color: textColor,
+        };
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "circleCard", style: style },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: textStyle },
+                textLabel,
+                ":",
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("em", null, textValue))));
+    }
+}
+CircleComponent.updateCallback = null;
+
+
+/***/ }),
+
+/***/ 1917:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   S: () => (/* binding */ VisualFormattingSettingsModel)
+/* harmony export */ });
+/* harmony import */ var powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7674);
+// settings.ts
+
+
+var FormattingSettingsCard = powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.SimpleCard */ .z.Tn;
+var FormattingSettingsModel = powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.Model */ .z.Kx;
+class CircleCardSettings extends FormattingSettingsCard {
+    constructor() {
+        super(...arguments);
+        this.circleColor = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.ColorPicker */ .z.sk({
+            name: "circleColor",
+            displayName: "Color",
+            description: "The fill color of the circle.",
+            visible: true,
+            value: { value: "white" },
+        });
+        this.circleThickness = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.NumUpDown */ .z.iB({
+            name: "circleThickness",
+            displayName: "Thickness",
+            description: "The circle thickness.",
+            visible: true,
+            value: 2,
+        });
+        this.labelText = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.ColorPicker */ .z.sk({
+            name: "labelText",
+            displayName: "Text Color",
+            value: { value: "smokewhite" },
+            visible: true,
+        });
+        this.name = "components";
+        this.displayName = "Components";
+        this.visible = true;
+        this.slices = [
+            this.circleColor,
+            this.circleThickness,
+            this.labelText,
+        ];
+    }
+}
+class TitleCardSettings extends FormattingSettingsCard {
+    constructor() {
+        super(...arguments);
+        this.titleText = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.TextInput */ .z.ks({
+            name: "titleText",
+            displayName: "Title Text",
+            value: "Sales",
+            visible: true,
+            placeholder: "Enter title here",
+        });
+        this.fontSize = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.NumUpDown */ .z.iB({
+            name: "fontSize",
+            displayName: "Font Size",
+            description: "The font size of the title.",
+            visible: true,
+            value: 20,
+        });
+        this.textColor = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_0__/* .formattingSettings.ColorPicker */ .z.sk({
+            name: "textColor",
+            displayName: "Text Color",
+            value: { value: "#000000" },
+            visible: true,
+        });
+        this.name = "titleSettings";
+        this.displayName = "Title Settings";
+        this.visible = true;
+        this.slices = [
+            this.titleText,
+            this.fontSize,
+            this.textColor,
+        ];
+    }
+}
+class VisualFormattingSettingsModel extends FormattingSettingsModel {
+    constructor() {
+        super(...arguments);
+        this.circleCard = new CircleCardSettings();
+        this.titleCard = new TitleCardSettings();
+        this.cards = [this.circleCard, this.titleCard];
+    }
+}
+
+
+/***/ }),
+
+/***/ 387:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   W: () => (/* binding */ TitleComponent),
+/* harmony export */   y: () => (/* binding */ initialTitleState)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6540);
+
+const initialTitleState = {
+    title: "Sales",
+    fontSize: 20,
+    textColor: "#000000",
+};
+class TitleComponent extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+    constructor(props) {
+        super(props);
+        this.state = initialTitleState;
+        this.state = initialTitleState;
+    }
+    static update(newState) {
+        if (typeof TitleComponent.updateCallback === "function") {
+            TitleComponent.updateCallback(newState);
+        }
+    }
+    componentWillMount() {
+        TitleComponent.updateCallback = (newState) => {
+            this.setState(newState);
+        };
+    }
+    componentWillUnmount() {
+        TitleComponent.updateCallback = null;
+    }
+    render() {
+        const { title, fontSize, textColor } = this.state;
+        const style = {
+            color: textColor,
+            fontSize: `${fontSize}px`,
+            position: "absolute",
+            top: "10px",
+            left: "10px",
+        };
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "titleComponent", style: style }, title));
+    }
+}
+TitleComponent.updateCallback = null;
+
+
+/***/ }),
+
+/***/ 9540:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   b: () => (/* binding */ Visual)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6540);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(961);
+/* harmony import */ var _circleComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7883);
+/* harmony import */ var powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7674);
+/* harmony import */ var _settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1917);
+/* harmony import */ var _barChartComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6016);
+/* harmony import */ var _titleComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(387);
+
+
+
+
+
+
+
+
+
+class Visual {
+    constructor(options) {
+        const container = document.createElement("div");
+        container.className = "visual-container";
+        options.element.appendChild(container);
+        this.titleContainer = document.createElement("div");
+        this.titleContainer.className = "titleContainer";
+        this.circleContainer = document.createElement("div");
+        this.circleContainer.className = "circleCard";
+        this.barChartContainer = document.createElement("div");
+        this.barChartContainer.className = "barChartContainer";
+        container.appendChild(this.circleContainer);
+        container.appendChild(this.barChartContainer);
+        container.appendChild(this.titleContainer);
+        this.circleRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C, {});
+        this.barChartRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X, {});
+        this.titleRoot = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W, {});
+        react_dom__WEBPACK_IMPORTED_MODULE_1__.render(this.circleRoot, this.circleContainer);
+        react_dom__WEBPACK_IMPORTED_MODULE_1__.render(this.barChartRoot, this.barChartContainer);
+        react_dom__WEBPACK_IMPORTED_MODULE_1__.render(this.titleRoot, this.titleContainer);
+        this.formattingSettingsService = new powerbi_visuals_utils_formattingmodel__WEBPACK_IMPORTED_MODULE_3__/* .FormattingSettingsService */ .O();
+    }
+    update(options) {
+        this.viewport = options.viewport;
+        const { width, height } = this.viewport;
+        const size = Math.min(width, height);
+        if (options.dataViews && options.dataViews[0]) {
+            const dataView = options.dataViews[0];
+            this.formattingSettings =
+                this.formattingSettingsService.populateFormattingSettingsModel(_settings__WEBPACK_IMPORTED_MODULE_4__/* .VisualFormattingSettingsModel */ .S, options.dataViews[0]);
+            const circleSettings = this.formattingSettings.circleCard;
+            const titleSettings = this.formattingSettings.titleCard;
+            const value = dataView.single.value;
+            const numericValue = typeof value === "number" ? value : parseFloat(value);
+            _circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C.update({
+                textLabel: dataView.metadata.columns[0].displayName,
+                textValue: numericValue.toString(),
+                size,
+                borderWidth: circleSettings.circleThickness.value,
+                background: circleSettings.circleColor.value.value,
+                textColor: circleSettings.labelText.value.value,
+            });
+            _barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X.update({
+                data: [
+                    {
+                        name: dataView.metadata.columns[0].displayName,
+                        value: numericValue,
+                    },
+                ],
+                backgroundColor: circleSettings.circleColor.value.value,
+                textColor: circleSettings.labelText.value.value,
+            });
+            _titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W.update({
+                title: titleSettings.titleText.value,
+                fontSize: titleSettings.fontSize.value,
+                textColor: titleSettings.textColor.value.value,
+            });
+        }
+        else {
+            this.clear();
+        }
+    }
+    clear() {
+        _circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .CircleComponent */ .C.update(_circleComponent__WEBPACK_IMPORTED_MODULE_2__/* .initialState */ .u);
+        _barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .BarChartComponent */ .X.update(_barChartComponent__WEBPACK_IMPORTED_MODULE_5__/* .initialBarChartState */ .F);
+        _titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .TitleComponent */ .W.update(_titleComponent__WEBPACK_IMPORTED_MODULE_6__/* .initialTitleState */ .y);
+    }
+    getFormattingModel() {
+        return this.formattingSettingsService.buildFormattingModel(this.formattingSettings);
+    }
+}
+
+
+/***/ }),
+
 /***/ 9417:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -32741,7 +32741,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _src_visual__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2336);
+/* harmony import */ var _src_visual__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9540);
 
 var powerbiKey = "powerbi";
 var powerbi = window[powerbiKey];
