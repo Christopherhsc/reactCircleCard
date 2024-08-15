@@ -15,6 +15,7 @@ import IViewport = powerbi.IViewport;
 import { FormattingSettingsService } from "powerbi-visuals-utils-formattingmodel";
 import { VisualFormattingSettingsModel } from "./settings";
 import { BarChartComponent, initialBarChartState } from "./barChartComponent";
+import { TitleComponent, initialTitleState } from "./titleComponent";
 
 import "./../style/visual.less";
 
@@ -26,13 +27,16 @@ export class Visual implements IVisual {
   private viewport: IViewport;
   private formattingSettings: VisualFormattingSettingsModel;
   private formattingSettingsService: FormattingSettingsService;
+  private titleContainer: HTMLElement;
+  private titleRoot: React.ComponentElement<any, any>;
 
   constructor(options: VisualConstructorOptions) {
     const container = document.createElement("div");
     container.className = "visual-container";
     options.element.appendChild(container);
+    this.titleContainer = document.createElement("div");
+    this.titleContainer.className = "titleContainer";
 
-    // Create separate containers for each component
     this.circleContainer = document.createElement("div");
     this.circleContainer.className = "circleCard";
 
@@ -41,12 +45,15 @@ export class Visual implements IVisual {
 
     container.appendChild(this.circleContainer);
     container.appendChild(this.barChartContainer);
+    container.appendChild(this.titleContainer);
 
     this.circleRoot = React.createElement(CircleComponent, {});
     this.barChartRoot = React.createElement(BarChartComponent, {});
+    this.titleRoot = React.createElement(TitleComponent, {});
 
     ReactDOM.render(this.circleRoot, this.circleContainer);
     ReactDOM.render(this.barChartRoot, this.barChartContainer);
+    ReactDOM.render(this.titleRoot, this.titleContainer);
 
     this.formattingSettingsService = new FormattingSettingsService();
   }
@@ -65,12 +72,12 @@ export class Visual implements IVisual {
           options.dataViews[0]
         );
       const circleSettings = this.formattingSettings.circleCard;
+      const titleSettings = this.formattingSettings.titleCard;
 
       const value = dataView.single.value;
       const numericValue =
         typeof value === "number" ? value : parseFloat(value as string);
 
-      // Update the CircleComponent
       CircleComponent.update({
         textLabel: dataView.metadata.columns[0].displayName,
         textValue: numericValue.toString(),
@@ -80,7 +87,6 @@ export class Visual implements IVisual {
         textColor: circleSettings.labelText.value.value,
       });
 
-      // Update the BarChartComponent
       BarChartComponent.update({
         data: [
           {
@@ -91,6 +97,12 @@ export class Visual implements IVisual {
         backgroundColor: circleSettings.circleColor.value.value,
         textColor: circleSettings.labelText.value.value,
       });
+
+      TitleComponent.update({
+        title: titleSettings.titleText.value,
+        fontSize: titleSettings.fontSize.value,
+        textColor: titleSettings.textColor.value.value,
+      });
     } else {
       this.clear();
     }
@@ -99,6 +111,7 @@ export class Visual implements IVisual {
   private clear() {
     CircleComponent.update(initialCircleState);
     BarChartComponent.update(initialBarChartState);
+    TitleComponent.update(initialTitleState);
   }
 
   public getFormattingModel(): powerbi.visuals.FormattingModel {

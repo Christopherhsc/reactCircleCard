@@ -4,6 +4,13 @@
   flex-direction: row;
   align-items: center;
   padding: 10px;
+  width: 100vw;
+  height: 100vh;
+  background: #384454;
+  background: -moz-linear-gradient(180deg, #384454 0%, #384454 25%, #3674b0 75%, #3674b0 100%);
+  background: -webkit-linear-gradient(180deg, #384454 0%, #384454 25%, #3674b0 75%, #3674b0 100%);
+  background: linear-gradient(180deg, #384454 0%, #384454 25%, #3674b0 75%, #3674b0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#384454", endColorstr="#3674b0", GradientType=1);
 }
 .circleCard {
   position: relative;
@@ -28,6 +35,11 @@ p {
   top: 50%;
   transform: translateY(-50%);
   margin: 0;
+}
+.titleContainer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 

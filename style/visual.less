@@ -4,6 +4,32 @@
   flex-direction: row;
   align-items: center;
   padding: 10px;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgb(56, 68, 84);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(56, 68, 84, 1) 0%,
+    rgba(56, 68, 84, 1) 25%,
+    rgba(54, 116, 176, 1) 75%,
+    rgba(54, 116, 176, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(56, 68, 84, 1) 0%,
+    rgba(56, 68, 84, 1) 25%,
+    rgba(54, 116, 176, 1) 75%,
+    rgba(54, 116, 176, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(56, 68, 84, 1) 0%,
+    rgba(56, 68, 84, 1) 25%,
+    rgba(54, 116, 176, 1) 75%,
+    rgba(54, 116, 176, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#384454",endColorstr="#3674b0",GradientType=1);
 }
 
 .circleCard {
@@ -31,4 +57,10 @@ p {
   top: 50%;
   transform: translateY(-50%);
   margin: 0;
+}
+
+.titleContainer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }

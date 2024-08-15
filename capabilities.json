@@ -8,8 +8,10 @@
   ],
   "objects": {
     "components": {
+      "displayName": "Components",
       "properties": {
         "circleColor": {
+          "displayName": "Circle Color",
           "type": {
             "fill": {
               "solid": {
@@ -19,11 +21,40 @@
           }
         },
         "circleThickness": {
+          "displayName": "Circle Thickness",
           "type": {
             "numeric": true
           }
         },
         "labelText": {
+          "displayName": "Label Text Color",
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "titleSettings": {
+      "displayName": "Title Settings",
+      "properties": {
+        "titleText": {
+          "displayName": "Title Text",
+          "type": {
+            "text": true
+          }
+        },
+        "fontSize": {
+          "displayName": "Font Size",
+          "type": {
+            "numeric": true
+          }
+        },
+        "textColor": {
+          "displayName": "Text Color",
           "type": {
             "fill": {
               "solid": {
